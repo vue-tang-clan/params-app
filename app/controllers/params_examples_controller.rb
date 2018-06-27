@@ -15,4 +15,17 @@ class ParamsExamplesController < ApplicationController
     end
     render "name.json.jbuilder"
   end
+
+  def guess_query_method
+    winning_number = 32
+    input_guess = params["my_guess"].to_i
+    if input_guess > winning_number
+      @output_message = "Pick lower!"
+    elsif input_guess < winning_number
+      @output_message = "Pick higher!"
+    else
+      @output_message = "You win!"
+    end
+    render "guess_query.json.jbuilder"
+  end
 end

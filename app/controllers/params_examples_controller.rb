@@ -12,6 +12,12 @@ class ParamsExamplesController < ApplicationController
     render "segment_params.json.jbuilder"
   end
 
+  def body_params_method
+    input_value = params["secret_info"]
+    @output_message = "The secret info is #{input_value}"
+    render "body_params.json.jbuilder"
+  end
+
   def name_method
     input_name = params["name"]
     upcased_name = input_name.upcase

@@ -6,6 +6,12 @@ class ParamsExamplesController < ApplicationController
     render "query_params.json.jbuilder"
   end
 
+  def segment_params_method
+    input_value = params["this_part_is_a_variable"]
+    @output_message = "Here is the url segment: #{input_value}"
+    render "segment_params.json.jbuilder"
+  end
+
   def name_method
     input_name = params["name"]
     upcased_name = input_name.upcase
